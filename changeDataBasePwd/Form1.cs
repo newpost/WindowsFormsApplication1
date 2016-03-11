@@ -18,6 +18,7 @@ namespace changeDataBasePwd
         private bool fileOpened = false;
 
         private string[] files;
+        private string selectedFilePath = string.Empty;
         public Form1()
         {
             
@@ -94,6 +95,19 @@ namespace changeDataBasePwd
             
             this.label4.Text = txt;
             button5.Enabled = true;
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                selectedFilePath = item.SubItems[0].Text;
+            }
+            else
+            {
+                
+            }
         }
     }
 }
