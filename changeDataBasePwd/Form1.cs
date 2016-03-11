@@ -38,7 +38,7 @@ namespace changeDataBasePwd
             {
                 if (string.IsNullOrEmpty(selectedFilePath))
                 {
-                    MessageBox.Show("请选择webconfig文件");
+                    MessageBoxEx.Show(this, "请选择webconfig文件");
                     return;
                 }
                 this.textBox1.Text = "";
@@ -51,7 +51,7 @@ namespace changeDataBasePwd
                     var connectString = doc.SelectSingleNode("/configuration/connectionStrings");
                     if (connectString == null)
                     {
-                        MessageBox.Show("webconfig文件中未发现连接字符串。");
+                        MessageBoxEx.Show(this, "webconfig文件中未发现连接字符串。");
                     }
                     else
                     {
@@ -107,7 +107,8 @@ namespace changeDataBasePwd
             files = null;
             if (string.IsNullOrEmpty(folderName))
             {
-                MessageBox.Show("没有选择文件夹");
+
+                MessageBoxEx.Show(this,"没有选择文件夹");
                 button5.Enabled = true;
                 return;
             }
