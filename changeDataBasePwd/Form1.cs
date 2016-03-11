@@ -15,7 +15,6 @@ namespace changeDataBasePwd
     public partial class Form1 : Form
     {
         private string folderName = string.Empty;
-        private bool fileOpened = false;
 
         private string[] files;
         private string selectedFilePath = string.Empty;
@@ -86,11 +85,9 @@ namespace changeDataBasePwd
             if (result == DialogResult.OK)
             {
                 folderName = folderBrowserDialog1.SelectedPath;
-                if (!fileOpened)
-                {
-                    this.label3.Text = "选择目录：" + folderName;
-                    fileOpened = true;
-                }
+
+                this.label3.Text = "选择目录：" + folderName;
+
             }
         }
 
