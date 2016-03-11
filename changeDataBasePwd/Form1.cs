@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml;
 namespace changeDataBasePwd
 {
     public partial class Form1 : Form
@@ -19,6 +19,8 @@ namespace changeDataBasePwd
 
         private string[] files;
         private string selectedFilePath = string.Empty;
+
+        private List<string> checkedFilePaths = new List<string>();
         public Form1()
         {
             
@@ -26,8 +28,50 @@ namespace changeDataBasePwd
             
         }
 
+        /// <summary>
+        /// 查看webconfig的字符串连接
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrEmpty(selectedFilePath))
+                {
+                    MessageBox.Show("请选择webconfig文件");
+                    return;
+                }
+                this.textBox1.Text = "";
+                XmlDocument doc = new XmlDocument();
+                doc.Load(selectedFilePath);
+                
+                var del_updateTextBox = new del_updateUI(updateTextBox);
+                Thread t = new Thread(() =>
+                {
+                    var connectString = doc.SelectSingleNode("/configuration/connectionStrings");
+                    if (connectString == null)
+                    {
+                        MessageBox.Show("webconfig文件中未发现连接字符串。");
+                    }
+                    else
+                    {
+                        string str = connectString.OuterXml;
+                        this.BeginInvoke(del_updateTextBox, str);
+                    }
+                });
+                t.Start();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+        }
+
+        private void updateTextBox(string txt)
+        {
+            this.textBox1.Text = txt;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -70,7 +114,7 @@ namespace changeDataBasePwd
                 button5.Enabled = true;
                 return;
             }
-            var _updateLabel = new del_updateLabel(updateLable);
+            var _updateLabel = new del_updateUI(updateGrid_Label);
             Thread t = new Thread(() =>
             {
                 files = Directory.GetFiles(folderName, "Web.config", SearchOption.AllDirectories);
@@ -81,12 +125,14 @@ namespace changeDataBasePwd
 
         }
 
-        private delegate void del_updateLabel(string txt);
+        private delegate void del_updateUI(string txt);
 
-        private void updateLable(string txt)
+        private void updateGrid_Label(string txt)
         {
+            listView1.Items.Clear();
             files.ToList().ForEach(x => 
-            { 
+            {
+                
                 ListViewItem lvi = new ListViewItem(x);
                 listView1.Items.Add(lvi);
             });
@@ -109,5 +155,79 @@ namespace changeDataBasePwd
                 
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var totalItemCount = listView1.Items.Count;
+            var checkedItemsCount = listView1.Items.OfType<ListViewItem>().Where(x => x.Checked == true).Count();
+
+            if (e.CurrentValue == CheckState.Unchecked)
+            {
+                checkedFilePaths.Add(this.listView1.Items[e.Index].SubItems[0].Text);
+                checkedItemsCount++;
+            }
+            else if ((e.CurrentValue == CheckState.Checked))
+            {
+                checkedFilePaths.Remove(this.listView1.Items[e.Index].SubItems[0].Text);
+                checkedItemsCount--;
+                
+            }
+            
+            if (checkedItemsCount == 0)
+            {
+                checkBox1.CheckState = CheckState.Unchecked;
+            }
+            else if (totalItemCount == checkedItemsCount)
+            {
+                checkBox1.CheckState = CheckState.Checked;
+            }
+            else
+            {
+                checkBox1.CheckState = CheckState.Indeterminate;
+            }
+            
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 修改webconfig
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var cb = sender as CheckBox;
+            if (cb.CheckState == CheckState.Checked)
+            {
+
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    item.Checked = true;
+                }
+            }
+            else
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    item.Checked = false;
+                }
+            }
+        }
+
     }
 }
