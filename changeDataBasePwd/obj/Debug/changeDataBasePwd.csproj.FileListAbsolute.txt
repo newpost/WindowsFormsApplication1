@@ -12,7 +12,7 @@ E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.pdb
 E:\github\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.exe
 E:\github\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.pdb
-E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csprojResolveAssemblyReference.cache
-E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Form1.resources
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Properties.Resources.resources
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csproj.GenerateResource.Cache
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Main_Form.resources
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csprojResolveAssemblyReference.cache
