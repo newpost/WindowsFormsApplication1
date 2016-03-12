@@ -7,3 +7,12 @@ D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBase
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csproj.GenerateResource.Cache
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.exe
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.pdb
+E:\github\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.exe.config
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.exe
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.pdb
+E:\github\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.exe
+E:\github\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.pdb
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csprojResolveAssemblyReference.cache
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Form1.resources
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Properties.Resources.resources
+E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csproj.GenerateResource.Cache

@@ -51,7 +51,8 @@ namespace changeDataBasePwd
                     var connectString = doc.SelectSingleNode("/configuration/connectionStrings");
                     if (connectString == null)
                     {
-                        MessageBoxEx.Show(this, "webconfig文件中未发现连接字符串。");
+                        del_updateUI _showMessage = new del_updateUI(showMessage);
+                        this.BeginInvoke(_showMessage, "webconfig文件中未发现连接字符串。");
                     }
                     else
                     {
@@ -66,6 +67,11 @@ namespace changeDataBasePwd
                 
                 throw;
             }
+        }
+
+        private void showMessage(string txt)
+        {
+            MessageBoxEx.Show(this, txt);
         }
 
         private void updateTextBox(string txt)
