@@ -112,6 +112,7 @@ namespace changeDataBasePwd
         private void btn_viewConfig_Click(object sender, EventArgs e)
         {
             btn_viewConfig.Enabled = false;
+            checkedFilePaths.Clear();
             files = null;
             if (string.IsNullOrEmpty(folderName))
             {
@@ -283,6 +284,10 @@ namespace changeDataBasePwd
             var xmlDoc = new XmlDocument();
             xmlDoc.Load(filePath);
             var root = xmlDoc.DocumentElement;
+            if (root["connectionStrings"] == null)
+            {
+                return enum_result = ModifyFlag.NoFoundConnStr;
+            }
             foreach (XmlNode node in root["connectionStrings"].ChildNodes)
             {
                 if (node.Attributes != null)

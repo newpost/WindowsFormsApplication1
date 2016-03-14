@@ -2,7 +2,6 @@ D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBase
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.exe
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\bin\Debug\changeDataBasePwd.pdb
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csprojResolveAssemblyReference.cache
-D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Form1.resources
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Properties.Resources.resources
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csproj.GenerateResource.Cache
 D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.exe
@@ -16,3 +15,4 @@ E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csproj.GenerateResource.Cache
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Main_Form.resources
 E:\github\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.csprojResolveAssemblyReference.cache
+D:\Func_Test\WindowsFormsApplication1\changeDataBasePwd\obj\Debug\changeDataBasePwd.Main_Form.resources
